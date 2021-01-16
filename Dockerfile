@@ -11,7 +11,6 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -ms /bin/bash pdflatex
-COPY ./entrypoint.sh /home/pdflatex/entrypoint.sh
-USER pdflatex
-ENTRYPOINT ["/home/pdflatex/entrypoint.sh"]
+COPY ./entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

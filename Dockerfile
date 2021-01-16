@@ -14,5 +14,4 @@ RUN apt-get update \
 RUN useradd -ms /bin/bash pdflatex
 COPY ./entrypoint.sh /home/pdflatex/entrypoint.sh
 USER pdflatex
-WORKDIR /home/pdflatex
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/home/pdflatex/entrypoint.sh"]
